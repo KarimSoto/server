@@ -1,0 +1,59 @@
+footer{
+    position: fixed;
+    width: 100%;
+    height: 15vh;
+    bottom: 0%;
+    background-color: rgb(32, 32, 32);
+    border-top: solid 1.5px black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+footer > #informacion_adicional{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer > #informacion_adicional > a{
+   align-content: center;
+   position: relative;
+   height: 100%;
+   color: white;
+   text-decoration: none;
+}
+
+footer > #informacion_adicional > #navegacion{
+    width: 100px;
+ }
+
+footer > #redes{
+    position: relative;
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex: row;
+    justify-content: space-around;
+}
+
+
+footer > #redes > a{
+    position: relative;
+    width: fit-content;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+footer > #redes > a > img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

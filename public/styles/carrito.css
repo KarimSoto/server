@@ -1,0 +1,125 @@
+.oki{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#contenedor_carrito{
+    position: relative;
+    width: 80%;
+    height:100%;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.productos{
+    position: relative;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border-bottom: solid 3px black;
+}
+
+.productos > .producto{
+    border-bottom: solid 2px black;
+}
+
+.productos:nth-last-child(){
+    border-bottom: none;
+}
+
+.producto{
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.producto > div{
+    position: relative;
+    width:20% ;
+    text-align: center;
+    height: fit-content;
+}
+
+.procederPago{
+    position: relative;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.izquierda, .derecha{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+}
+
+.izquierda > button:hover, .derecha > button:hover{
+    cursor: pointer;
+}
+
+
+
+
+.mensajeNull{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.mensajeNull > span {
+    text-align: center;
+    z-index: 2;
+}
+
+#contenedor_carrito > img{
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%,-100%);
+    width: 120px;
+    height: 120px;
+}
+
+@media screen and (max-width:900px){
+    #contenedor_carrito > img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width:500px){
+    #contenedor_carrito > img{
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+@media screen and (max-width:300px){
+    #contenedor_carrito > img{
+        width: 75px;
+        height: 75px;
+    }
+}

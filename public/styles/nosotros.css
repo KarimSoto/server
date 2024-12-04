@@ -1,0 +1,87 @@
+.nosotros{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.nosotros > div:nth-child(even){
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nosotros > div:nth-child(odd){
+    display: flex;
+    flex-direction: row;
+}
+
+.concepto{
+    height: 200px;
+    gap: 20px;
+    font-size: 1.1rem;
+}
+
+.concepto > .text{
+    position: relative;
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    border: solid 1px black;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+.concepto > .text > p{
+    position: relative;
+    width: 90%;
+    height: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: justify;
+}
+
+.concepto > img{
+    position: relative;
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+
+.historia{
+    height: 220px;
+    gap: 20px;
+    font-size: 1.1rem;
+}
+
+.historia > .text{
+    position: relative;
+    width: 35%;
+    height: 100%;
+    border-radius: 10px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+.historia > .text > p{
+    position: relative;
+    width: 90%;
+    height: fit-content;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: justify;
+}
+
+.historia > img{
+    position: relative;
+    width: 25%;
+    height: 100%;
+    border-radius: 10px;
+}

@@ -1,0 +1,90 @@
+/* <div id="contenedor">
+
+        <div id="local">
+            <img src="">
+            <div id="info">
+                div.name
+                <div id="surcusal">
+                    <div id="horarios"> </div>
+                    <div id="direccion"></div>
+                </div>
+            </div>
+        </div>
+        
+   </div> */
+
+
+#contenedor{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    gap: 20px;
+}
+
+
+#contenedor > #local{
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 250px;
+    background-color: white;
+}
+
+#contenedor > #local > img{
+    position: relative;
+    width: 45%;
+    height: 100%;
+}
+
+
+#contenedor > #local:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+#contenedor > #local:nth-child(odd){
+    flex-direction: row;
+}
+
+
+#info {
+    position: relative;
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#nameSucursal{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    font-weight: 600;
+    text-align: center;
+}
+
+#sucursal{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+#horarios,  #direccion{
+    position: relative;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: justify;
+}
+
+
+

@@ -1,0 +1,107 @@
+.carousel{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 77%;
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+
+.con{
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.contenido > img {
+    width: 100%;
+    height: 100%;
+}
+
+.contenido > .derecha, .contenido > .izquierda{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.863);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.contenido > .derecha:hover, .contenido > .izquierda:hover{
+    cursor: pointer;
+}
+
+.contenido > .izquierda {
+    left: 2%;
+}
+
+.contenido > .derecha {
+    left: 98%;
+    transform: translateX(-100%);
+}
+
+
+.contenido > .derecha > i, .contenido > .izquierda > i{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.caption{
+    background-color: rgb(231, 231, 231);
+    font-family:'Times New Roman', Times, serif;
+    position: relative;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption > span, .caption > p{
+    position: relative;
+    width: 97%;
+}
+.caption > span{font-weight: 500; text-align: center; font-size: 1.1rem; text-decoration:underline;}
+.caption > p{ font-weight: 400; text-align: justify;}
+
+@media screen and (max-width:900px){
+    .carousel{
+        width: 86%;
+    }
+}
+
+
+@media screen and (max-width:500px){
+    .carousel{
+        width: 92%;
+    }
+}
+
+@media screen and (max-width:300px){
+    .carousel{
+        width: 100%;
+        height: 70vh;
+    }
+}

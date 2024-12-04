@@ -1,0 +1,234 @@
+.contenedor{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.seleccionarTarjeta{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+.seleccionarTarjeta > div{
+    position: relative;
+    width: 95%;
+}
+
+
+.tarjetas_user{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 55%;
+    flex-wrap: wrap;
+}
+
+.tarjeta{
+    position: relative;
+    width: 120px;
+    height: 70px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(157, 168, 219);
+}
+
+.tarjeta:hover{
+    cursor: pointer;
+}
+
+
+.tarjeta > div{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.tarjeta > .up{
+    width: 90%;
+    height: 55%;
+    justify-content: space-between;
+}
+
+.tarjeta > .up > img{
+    position: relative;
+    width: 35%;
+    height: auto;
+}
+
+.tarjeta > .up > .circle{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.tarjeta > .down{
+    width: 100%;
+    justify-content: space-around;
+    height: 45%;
+}
+
+.tarjeta > .down > div{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 50%;
+    background-color: rgb(219, 219, 219);
+    font-size: 0.7rem;
+}
+
+.tarjeta > .down div:nth-last-child(1){
+    background-color:transparent;
+    display: flex;
+    align-items: center;
+}
+
+.tarjetas_user > button{
+    width: 120px;
+    height: 70px;
+    font-size: 1.3rem;
+    background-color: rgb(157, 168, 219);
+    border: solid 1px black;
+}
+
+
+.tarjeta img:hover, button{
+    cursor: pointer;
+}
+
+
+
+#contenedor_carrito{
+    position: relative;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(158, 158, 158);
+}
+
+
+.productos{
+    position: relative;
+    width: 100%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    background-color: rgb(209, 209, 209);
+}
+
+.productos > .producto{
+    position: relative;
+    width: 95%;
+    min-height: 40px;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.productos .producto:nth-last-child(1){
+    border-bottom: none;
+}
+
+.producto > div{
+    position: relative;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.producto > div > span{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+
+.producto  div:nth-child(n+2):nth-child(-n+4)  > span{
+    text-align: center;
+}
+
+.procederPago{
+    position: relative;
+    width: 95%;
+    height: 15%;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.especific{
+    height: 20%;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:20px
+}
+
+.confirmarPago{
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.confirmarPago > button{
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    width: 100px;
+    height: 50px;
+}
+
+
+#End_order{
+    background-color: rgb(92, 189, 13);
+}
+
+
+
+.display{
+    position: fixed;
+    width: 45%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(154, 226, 157);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    display: none;
+    align-items: center;
+}
+
+.display > span{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.display > span > i{
+    color: rgb(0, 133, 0);
+}
