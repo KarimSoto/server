@@ -2,6 +2,7 @@ import mysql, { format } from "mysql2";
 import bcryptjs from "bcryptjs";
 import jsonwebtoken from "jsonwebtoken";
 import dotenv from "dotenv";
+import { methods as metodos , carritoTemporal } from "./inserciones.js";
 
 
 dotenv.config({path:'../.env'});
@@ -185,8 +186,13 @@ async function pedido(request,response){
         response.status(200).send({comidas:comidas,bebidas:bebidas,logueado:to_login});
     }
     else{
-        console.log('El usuario no esta logueado');
-        response.status(200).send({logueado:false});
+
+        let comidas = carritoTemporal.obtenerComidas();
+        let bebidas = carritoTemporal.obtenerBebidas();
+
+        // Retornas las comidas y bebidas que el usuario haya almacenado de forma temporal
+        response.status(200).send({comidas:comidas,bebidas:bebidas,logueado:false});
+        
     }
     
 }
@@ -388,15 +394,4 @@ export const methods = {
     Login,
     logueado,
     mensaje
-};
-
-
-
-
-
-
-
-
-
-
-//ItsukiSoto23#
+}

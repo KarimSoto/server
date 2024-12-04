@@ -1,5 +1,6 @@
 import mysql from "mysql2";
 import { methods as funciones} from "./retornos.js";
+import { carritoTemporal } from "./inserciones.js";
 
 
 
@@ -69,7 +70,70 @@ async function eliminarPedidoProducto(request,response){
         }
     }
     else{
-        console.log('El usuario no esta logueado')
+        // Si el usuario quiere eliminar sin estar logueado, eliminaremos del arreglo temporal
+
+        if(Object.keys(request.body)[0] == 'bebida'){
+            // El producto a eliminar es de tipo bebida
+
+            let bebidas = carritoTemporal.obtenerBebidas();
+
+
+            // debemos encontrar la bebida en especifico
+            let index = bebidas.findIndex(bebida=>
+                bebida.nombre_bebida == request.body.bebida && bebida.tamaño == request.body.tamaño
+            );
+
+            // Cuando nos devuelve -1 es porque no encontro una coincidencia, por lo que no puede eliminar
+            if(index!=-1){
+                bebidas.splice(index, 1);
+                console.log('bebida borrada del carrito temporal');
+            }
+
+            console.log(carritoTemporal.obtenerBebidas());
+
+
+        }
+        else{
+            // El producto a eliminar es de tipo comida
+
+            let comidas = carritoTemporal.obtenerComidas();
+
+
+            let index = comidas.findIndex(comida=>
+                comida.nombre_comida == request.body.comida
+            );
+
+            // Si nos devuelve -1 es porque no encontro ninguna coincidencia
+            if(index!=-1){
+                comidas.splice(index, 1);
+                console.log('comida eliminada del carrito temporal');
+            }
+
+            console.log(carritoTemporal.obtenerComidas());
+
+
+        }
+
+
+        // No importa cual de los dos se halla eliminado, debemos de arrojar el nuevo total
+
+        let nuevo_arreglo_comidas = carritoTemporal.obtenerComidas();
+        let nuevo_arreglo_bebidas = carritoTemporal.obtenerBebidas();
+
+        let total = 0;
+
+        for(let comida in nuevo_arreglo_comidas){
+            total +=  nuevo_arreglo_comidas[comida].subtotal;
+        }
+
+        for(let bebida in nuevo_arreglo_bebidas){
+            total+= nuevo_arreglo_bebidas[bebida].subtotal;
+        }
+
+        console.log(total);
+
+
+        response.status(200).send({total:total});
     }
     
 
@@ -104,7 +168,27 @@ async function eliminarPedido(request,response){
         return response.status(200).send({eliminacion:eliminacion});
     }
     else{
-        console.log('El usuario no esta logueado');
+
+        try{
+
+            // No debemos eliminar el pedido si hay productos pendientes
+            let cantidad_comidas = carritoTemporal.obtenerComidas().length;
+            let cantidad_bebidas = carritoTemporal.obtenerBebidas().length;
+            let cantidad = cantidad_bebidas + cantidad_comidas;
+            let eliminacion = 0; // Si esta en 0 significa que no eliminamos el pedido
+
+            if(cantidad>0){
+                // Ahora si podemos eliminar el pedido
+                carritoTemporal.vaciarCarrito();
+                eliminacion = 1;
+            }
+
+            return response.status(200).send({eliminacion:eliminacion});
+
+        }catch(error){
+            console.log(`Al parecer hubo un error ${error}`);
+            return response.status(500).send({eliminacion:0});
+        }
     }
 
 

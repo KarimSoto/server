@@ -202,19 +202,6 @@ async function detallesDelProducto(){
                     window.location.href = respuestaJSON.redirect;
                 }
 
-                if(respuestaJSON.logueado == false){
-                    console.log('logueado');
-
-                    // Mostrar en Consola que debe de llenar todos los datos
-                    let mostrar = document.getElementsByClassName('ponerData')[0];
-                    mostrar.innerHTML = `Debes iniciar sesion primero <i class="bi bi-person-lock"></i>`;
-                    mostrar.style.backgroundColor = "rgb(255, 251, 0)";
-                    mostrar.style.display = 'inline-block';
-                    setTimeout(function(){
-                        mostrar.style.display = 'none';
-                    },1500);
-                    
-                }
             }
             btnAñadir.textContent = 'añadir';
             divAñadir.append(btnAñadir);

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import connection from '../database/connection.js';
 import { methods as retornar } from '../controllers/retornos.js';
 import { methods as comprobacion } from '../middlewares/comprobacion.js';
-import { methods as inserciones } from '../controllers/inserciones.js';
+import { methods as inserciones, carritoTemporal } from '../controllers/inserciones.js';
 import { methods as eliminaciones } from '../controllers/eliminaciones.js';
 import { methods as procedimientos } from '../controllers/procedimientos.js';
 
@@ -92,3 +92,6 @@ app.post('/account',inserciones.crearCuenta);
 app.listen(port,()=>{
     console.log(`Servidor corriendo en el puerto ${port}`);
 });
+
+
+//ItsukiSoto23#

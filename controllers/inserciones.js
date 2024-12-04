@@ -1,5 +1,9 @@
 import mysql from "mysql2";
 import { methods as funciones } from "./retornos.js";
+import Carrito from "./Carrito.js";
+
+
+const carritoTemporal = new Carrito();
 
 
 async function addPedido_producto(request, response){
@@ -59,7 +63,52 @@ async function addPedido_producto(request, response){
 
     }
     else{
-        response.status(200).send({logueado:false});
+        // Si el usuario esta logueado, vamos a almacenar el producto de forma temporal
+
+        if(Object.keys(request.body)[0] == 'comida'){
+
+            let queryBusCo = "call getComidasValores(?)";
+            let paramBusCo = [request.body.comida];
+
+            let [resBusCo] = await request.database.query(mysql.format(queryBusCo,paramBusCo));
+
+            console.log(resBusCo[0][0]);
+
+            let comida = {
+                nombre_comida:request.body.comida,
+                precio:resBusCo[0][0].precio,
+                img:resBusCo[0][0].img,
+                cantidad:request.body.cantidad,
+                subtotal:resBusCo[0][0].precio*request.body.cantidad
+            }
+            
+            carritoTemporal.agregarComida(comida);
+        }
+        else{
+
+            let queryBusBe = "call getBebidaValores(?,?)";
+            let paramBusBe = [request.body.bebida, request.body.tamaño];
+
+            let [resBusBe] = await request.database.query(mysql.format(queryBusBe,paramBusBe));
+
+            console.log(resBusBe[0][0]);
+
+            let bebida = {
+                nombre_bebida:request.body.bebida,
+                precio:resBusBe[0][0].precio,
+                img:resBusBe[0][0].img,
+                tamaño:request.body.tamaño,
+                cantidad:request.body.cantidad,
+                subtotal:resBusBe[0][0].precio*request.body.cantidad
+            }
+
+            carritoTemporal.agregarBebida(bebida);
+        }
+
+        console.log('producto temporalmente almacenado');
+
+        response.status(200).send({redirect:'/carrito'});
+
     }
    
 }
@@ -86,4 +135,8 @@ async function crearCuenta(request,response){
 export const methods = {
     addPedido_producto,
     crearCuenta
-}
+};
+
+
+export { carritoTemporal };
+
