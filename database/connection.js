@@ -4,11 +4,11 @@ dotenv.config({path:'../.env'});
 
 
 const connection = mysql.createConnection({
-    host:process.env.MySQL_host,
-    port:process.env.MySQL_port,
-    database:process.env.MySQL_database,
-    user:process.env.MySQL_user,
-    password:process.env.MySQL_password
+    host:"autorack.proxy.rlwy.net",
+    port:16467,
+    database:"railway ",
+    user:"root",
+    password:"NMJztHxpfQNbcMtSJQgpKsWRWvVqsrkM"
 }).promise();
 
 
