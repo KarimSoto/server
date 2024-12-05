@@ -8,7 +8,7 @@ async function PedirMenu(){
     });
 
 
-    const respuesta = await fetch("http://localhost:3000/menu",{
+    const respuesta = await fetch("https://server-production-eeb2.up.railway.app/menu",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

@@ -9,7 +9,7 @@ async function detallesDelProducto(){
 
     const producto = sessionStorage.getItem('producto');
 
-    const respuesta = await fetch('http://localhost:3000/producto',{
+    const respuesta = await fetch('https://server-production-eeb2.up.railway.app/producto',{
         method:'POST',
         headers:{
             "Content-Type":"application/json"
@@ -177,7 +177,7 @@ async function detallesDelProducto(){
                 console.log('hiciste click');
 
                 // ademas de que si estamos aqui, es porque es de tipo bebida
-                const respuesta = await fetch("http://localhost:3000/addPedido",{
+                const respuesta = await fetch("https://server-production-eeb2.up.railway.app/addPedido",{
                     method:'POST',
                     headers:{
                         "Content-Type":"application/json"
@@ -301,7 +301,7 @@ async function detallesDelProducto(){
 
 
                 // ademas de que si estamos aqui, es porque es de tipo bebida
-                const respuesta = await fetch("http://localhost:3000/addPedido",{
+                const respuesta = await fetch("https://server-production-eeb2.up.railway.app/addPedido",{
                     method:'POST',
                     headers:{
                         "Content-Type":"application/json"

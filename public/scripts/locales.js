@@ -8,7 +8,7 @@ async function PedirLocales(){
     });
 
 
-    const respuesta = await fetch("http://localhost:3000/locales",{
+    const respuesta = await fetch("https://server-production-eeb2.up.railway.app/locales",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

@@ -36,7 +36,7 @@ formulario.addEventListener('submit',async function(e){
     }
     else{
 
-        let peticion = await fetch("http://localhost:3000/loginInsert",{
+        let peticion = await fetch("https://server-production-eeb2.up.railway.app/loginInsert",{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

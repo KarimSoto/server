@@ -33,7 +33,7 @@ form.addEventListener('submit',async function(event){
 
     console.log(event.target.nombre.value);
 
-    let res = await fetch('http://localhost:3000/account',{
+    let res = await fetch('https://server-production-eeb2.up.railway.app/account',{
         method:'POST',
         headers:{
             'Content-Type':'application/json',

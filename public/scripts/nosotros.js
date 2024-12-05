@@ -9,7 +9,7 @@ btnLog.addEventListener('click',function(){
 
 async function llamada(){
 
-    let respuesta = await fetch("http://localhost:3000/nosotrosLogin",{
+    let respuesta = await fetch("https://server-production-eeb2.up.railway.app/nosotrosLogin",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'

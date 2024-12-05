@@ -7,7 +7,7 @@ async function pedirORDER(){
         window.location.href = '/login';
     });
 
-    let response = await fetch("http://localhost:3000/carrito_tarjetas",{
+    let response = await fetch("https://server-production-eeb2.up.railway.app/carrito_tarjetas",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -180,7 +180,7 @@ async function pedirORDER(){
     EndBtn.onclick = async function(){
 
         // Debemos de finalizar la compra
-        let respuestaFinal = await fetch("http://localhost:3000/finalizarPedido",{
+        let respuestaFinal = await fetch("https://server-production-eeb2.up.railway.app/finalizarPedido",{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'

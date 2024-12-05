@@ -11,7 +11,7 @@ async function eliminarPedido(){
 
     console.log('funcion ejecutandose');
 
-    let r = await fetch("http://localhost:3000/eliminarTodoPedido",{
+    let r = await fetch("https://server-production-eeb2.up.railway.app/eliminarTodoPedido",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -43,7 +43,7 @@ async function pedirPedido(){
 
 
     // Primero pedir todos los pedidos
-    const respuesta = await fetch("http://localhost:3000/pedirPedido",{
+    const respuesta = await fetch("https://server-production-eeb2.up.railway.app/pedirPedido",{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
@@ -422,7 +422,7 @@ async function pedirPedido(){
                     let boton = document.createElement('button');
                     boton.onclick = async function(){
 
-                        let resDelete = await fetch("http://localhost:3000/eliminarPedidoProducto",{
+                        let resDelete = await fetch("https://server-production-eeb2.up.railway.app/eliminarPedidoProducto",{
                             method:'POST',
                             headers:{
                                 'Content-Type':'application/json'
@@ -515,7 +515,7 @@ async function pedirPedido(){
                     let boton = document.createElement('button');
                     boton.onclick = async function(){
 
-                        let resDelete = await fetch("http://localhost:3000/eliminarPedidoProducto",{
+                        let resDelete = await fetch("https://server-production-eeb2.up.railway.app/eliminarPedidoProducto",{
                             method:'POST',
                             headers:{
                                 'Content-Type':'application/json'
