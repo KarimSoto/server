@@ -8,6 +8,9 @@ import { methods as comprobacion } from '../middlewares/comprobacion.js';
 import { methods as inserciones, carritoTemporal } from '../controllers/inserciones.js';
 import { methods as eliminaciones } from '../controllers/eliminaciones.js';
 import { methods as procedimientos } from '../controllers/procedimientos.js';
+import dotenv from "dotenv";
+
+dotenv.config({path:'../.env'});
 
 
 const _dirname = path.dirname(fileURLToPath(import.meta.url));
