@@ -8,7 +8,7 @@ let btnLog = document.getElementById('logIN/OUT');
 
 async function llamarInicio(){
 
-    let respuesta = await fetch('http://localhost:3000/inicioPOST',{
+    let respuesta = await fetch('https://server-production-eeb2.up.railway.app//inicioPOST',{
         method:'POST',
         headers:{
             'Content-Type':'application/json'
