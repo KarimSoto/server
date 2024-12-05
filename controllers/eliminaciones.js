@@ -3,7 +3,6 @@ import { methods as funciones} from "./retornos.js";
 import { carritoTemporal } from "./inserciones.js";
 
 
-
 async function eliminarPedidoProducto(request,response){
 
     let query ='';
@@ -136,7 +135,6 @@ async function eliminarPedidoProducto(request,response){
         response.status(200).send({total:total});
     }
     
-
 }
 
 
