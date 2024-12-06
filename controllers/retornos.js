@@ -314,9 +314,9 @@ async function Login(request,response){
                 {
                     user:results[0][0].correo_cliente
                 },
-                process.env.JWT_SECRET,
+                "Miku's headphones",
                 {
-                    expiresIn:process.env.JWT_EXPIRATION
+                    expiresIn:"1d"
                 }
             );
 
@@ -355,7 +355,7 @@ async function logueado(request){
         if(galleta){
             galleta = galleta.slice(8);
 
-            let decodificada = await jsonwebtoken.verify(galleta, process.env.JWT_SECRET); // decodificar galleta 
+            let decodificada = await jsonwebtoken.verify(galleta, "Miku's headphones"); // decodificar galleta 
 
 
             logueado = true;
