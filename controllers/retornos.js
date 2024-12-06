@@ -322,7 +322,7 @@ async function Login(request,response){
 
 
             let cookie_configuration = {
-                expires: new Date(Date.now() + process.env.COOKIE_EXPIRES * 20 * 60 * 1000), // 20 min
+                expires: new Date(Date.now() + 1 * 20 * 60 * 1000), // 20 min
                 path:"/"
             }
 
