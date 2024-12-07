@@ -171,7 +171,7 @@ async function pedirPedido(){
                     let boton = document.createElement('button');
                     boton.onclick = async function(){
 
-                        let resDelete = await fetch("http://localhost:3000/eliminarPedidoProducto",{
+                        let resDelete = await fetch("https://server-production-eeb2.up.railway.app/eliminarPedidoProducto",{
                             method:'POST',
                             headers:{
                                 'Content-Type':'application/json'
@@ -264,7 +264,7 @@ async function pedirPedido(){
                     let boton = document.createElement('button');
                     boton.onclick = async function(){
 
-                        let resDelete = await fetch("http://localhost:3000/eliminarPedidoProducto",{
+                        let resDelete = await fetch("https://server-production-eeb2.up.railway.app/eliminarPedidoProducto",{
                             method:'POST',
                             headers:{
                                 'Content-Type':'application/json'

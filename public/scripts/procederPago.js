@@ -35,9 +35,9 @@ async function pedirORDER(){
         console.log(bebidas);
     }
 
-    if(respuestaJson.logueado != undefined){
+    if(responseJson.logueado != undefined){
         
-        let logueado = respuestaJson.logueado;
+        let logueado = responseJson.logueado;
 
         if(logueado != false){
             
